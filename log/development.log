@@ -1,0 +1,16 @@
+Started GET "/" for ::1 at 2021-10-26 14:04:20 -0400
+
+ActiveRecord::NoDatabaseError - FATAL:  database "benchBnB_development" does not exist:
+
+Started POST "/__better_errors/5288222729c1de62/variables" for ::1 at 2021-10-26 14:04:20 -0400
+  [1m[35m (295.1ms)[0m  [1m[35mCREATE DATABASE "benchBnB_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (148.3ms)[0m  [1m[35mCREATE DATABASE "benchBnB_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-10-26 14:11:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 2751ms (Views: 2750.3ms | ActiveRecord: 0.0ms)
+
+
