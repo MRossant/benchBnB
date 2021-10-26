@@ -419,3 +419,238 @@ Migrating to AddColumnsToUsers (20211026184912)
   ↳ bin/rails:9
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (78.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "benchBnB_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (52.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "benchBnB_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (194.3ms)[0m  [1m[35mCREATE DATABASE "benchBnB_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (91.8ms)[0m  [1m[35mCREATE DATABASE "benchBnB_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (2.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (33.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying, "session_token" character varying)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20211026184912)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20211026183641);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-10-26 20:14:39.835938"], ["updated_at", "2021-10-26 20:14:39.835938"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "password_digest" character varying, "session_token" character varying)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20211026184912)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20211026183641);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-10-26 20:14:39.942355"], ["updated_at", "2021-10-26 20:14:39.942355"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-10-26 20:14:39.946355"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-10-26 16:14:55 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/matteo/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        return nil session[:session_token]
+                   ^~~~~~~:
+  app/controllers/application_controller.rb:14:in `'
+  app/controllers/static_pages_controller.rb:1:in `<top (required)>'
+
+Started POST "/__better_errors/b77786babe2e5d05/variables" for ::1 at 2021-10-26 16:15:05 -0400
+Started GET "/" for ::1 at 2021-10-26 16:34:34 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/matteo/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        return nil session[:session_token]
+                   ^~~~~~~:
+  app/controllers/application_controller.rb:14:in `'
+  app/controllers/static_pages_controller.rb:1:in `<top (required)>'
+
+Started POST "/__better_errors/4158924e1a52fadd/variables" for ::1 at 2021-10-26 16:34:35 -0400
+Started GET "/api/users" for ::1 at 2021-10-26 16:34:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/__better_errors/4158924e1a52fadd/variables" for ::1 at 2021-10-26 16:34:58 -0400
+Started POST "/api/users?user[username]=feifei&user[password]=[FILTERED]" for ::1 at 2021-10-26 16:41:57 -0400
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        return nil session[:session_token]
+                   ^~~~~~~:
+  app/controllers/application_controller.rb:14:in `'
+  app/controllers/api/users_controller.rb:1:in `<top (required)>'
+
+Started POST "/api/users?user[username]=feifei&user[password]=[FILTERED]" for ::1 at 2021-10-26 16:43:56 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/matteo/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"feifei", "password"=>"[FILTERED]"}, "formate"=>:json}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError - Unknown key: :length. Valid keys are: :on, :if, :unless, :prepend. Perhaps you meant to call `validates` instead of `validate`?:
+  app/models/user.rb:4:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/api/users_controller.rb:6:in `create'
+
+Started POST "/api/users?user[username]=feifei&user[password]=[FILTERED]" for ::1 at 2021-10-26 16:44:48 -0400
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/matteo/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"feifei", "password"=>"[FILTERED]"}, "formate"=>:json}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "feifei"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Create (4.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "feifei"], ["created_at", "2021-10-26 20:44:49.211868"], ["updated_at", "2021-10-26 20:44:49.211868"], ["password_digest", "$2a$12$4wedDhMtfUlK5Ssal/VtOu.UBpGdLTIfIs4xW.7ypvmnEWqruSeIG"], ["session_token", "XkZ3zUmH8Cek8rKhXrJQKQ"]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (39.9ms)
+Completed 200 OK in 892ms (Views: 202.9ms | ActiveRecord: 38.8ms)
+
+
+Started POST "/api/users?user[username]=feifei1&user[password]=[FILTERED]" for ::1 at 2021-10-26 16:45:49 -0400
+Processing by Api::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"feifei1", "password"=>"[FILTERED]"}, "formate"=>:json}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "feifei1"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Create (3.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at", "password_digest", "session_token") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "feifei1"], ["created_at", "2021-10-26 20:45:50.335923"], ["updated_at", "2021-10-26 20:45:50.335923"], ["password_digest", "$2a$12$DbJKA25bzF3fiikovFfsiu9F4Xn9vU63rShvKX0DTSANPfKx8.a5i"], ["session_token", "FXbBHdHo_NQ46qPFm-EbKA"]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/show.json.jbuilder (76.2ms)
+Completed 200 OK in 624ms (Views: 229.0ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/api/session?user[username]=feifei1&user[password]=[FILTERED]" for ::1 at 2021-10-26 16:50:44 -0400
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"username"=>"feifei1", "password"=>"[FILTERED]"}, "formate"=>:json}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 6ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/api/session?user[username]=feifei1&user[password]=[FILTERED]" for ::1 at 2021-10-26 16:51:24 -0400
+Processing by Api::SessionsController#create as */*
+  Parameters: {"user"=>{"username"=>"feifei1", "password"=>"[FILTERED]"}, "formate"=>:json}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "feifei1"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (26.8ms)
+Completed 200 OK in 601ms (Views: 169.2ms | ActiveRecord: 16.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-10-26 16:52:25 -0400
+Processing by Api::SessionsController#destroy as */*
+  Parameters: {"formate"=>:json}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "FXbBHdHo_NQ46qPFm-EbKA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:36
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "feifei1"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36
+  [1m[36mUser Update (9.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "_9L8hg7XPr_ATif60c1tXw"], ["updated_at", "2021-10-26 20:52:25.389986"], ["id", 2]]
+  ↳ app/models/user.rb:36
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:36
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 14.9ms)
+
+
