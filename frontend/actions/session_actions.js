@@ -16,17 +16,20 @@ export const logOutCurrentUser = () => ({
 
 export const receiveErrors = (errors) => ({
     type: RECEIVE_ERRORS,
-    errors // errors: [errors]
+    errors
 })
 
 // thunk actions
 export const login = user => dispatch => postSession(user)
-    .then(user => dispatch(receiveCurrentUser(user)));
+    .then(user => dispatch(receiveCurrentUser(user)))
+    .fail(errors => dispatch(receiveErrors(errors)))
 
 export const logout = () => dispatch => deleteSession()
-    .then(() => dispatch(logOutCurrentUser()));
+    .then(() => dispatch(logOutCurrentUser()))
+    .fail(errors => dispatch(receiveErrors(errors)))
 
 export const signup = user => dispatch => postUser(user)
-    .then(user => dispatch(receiveCurrentUser(user)));
+    .then(user => dispatch(receiveCurrentUser(user)))
+    .fail(errors => dispatch(receiveErrors(errors)))
 
 
