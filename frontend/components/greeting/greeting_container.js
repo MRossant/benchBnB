@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import { login, logout, signup } from '../../actions/session_actions';
 
 const mSTP = (state) => {
-    const sessionId = state.session.id
     return {
-        currentUser: state.entities.users[sessionId]
+        currentUser: state.entities.users[state.session.id]
     }
 };
 
